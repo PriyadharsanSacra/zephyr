@@ -93,23 +93,16 @@ npm10xx@8 {
 	};
 };
 
-adp5360@9 {
-	compatible = "adi,adp5360";
+bq24295@9 {
+	compatible = "ti,bq24295";
 	reg = <0x9>;
 
-	charger {
-		compatible = "adi,adp5360-charger";
-		battery-name = "dummy-charger";
-		device-chemistry = "lithium-ion";
-		constant-charge-current-max-microamp = <20000>;
-		constant-charge-voltage-max-microvolt = <4160000>;
-		charge-term-current-microamp = <5000>;
-	};
-};
+	status = "okay";
 
-sy6974b@a {
-	compatible = "silergy,sy6974b";
-	reg = <0xa>;
-	constant-charge-current-max-microamp = <1500000>;
+	constant-charge-current-max-microamp = <512000>;
 	constant-charge-voltage-max-microvolt = <4208000>;
+
+	watchdog-timeout-ms = <0>;
+
+	ce-gpios = <&test_gpio 0 0>;
 };
